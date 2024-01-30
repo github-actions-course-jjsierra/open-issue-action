@@ -1,5 +1,5 @@
 const core = require('@actions/core')
-const github  = require('@actions/github')
+const github = require('@actions/github')
 
 /**
  * The main function for the action.
@@ -7,10 +7,10 @@ const github  = require('@actions/github')
  */
 async function run() {
   try {
-    const token = core.getInput("token")
-    const title = core.getInput("title")
-    const body = core.getInput("body")
-    const assignees = core.getInput("assignees")
+    const token = core.getInput('token')
+    const title = core.getInput('title')
+    const body = core.getInput('body')
+    const assignees = core.getInput('assignees')
 
     const octokit = github.getOctokit(token)
 
@@ -23,7 +23,6 @@ async function run() {
     })
 
     core.setOutput('issue', response.data)
-
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)
