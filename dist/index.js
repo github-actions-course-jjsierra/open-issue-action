@@ -28910,7 +28910,7 @@ function wrappy (fn, cb) {
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const core = __nccwpck_require__(2186)
-const github  = __nccwpck_require__(5438)
+const github = __nccwpck_require__(5438)
 
 /**
  * The main function for the action.
@@ -28918,10 +28918,10 @@ const github  = __nccwpck_require__(5438)
  */
 async function run() {
   try {
-    const token = core.getInput("token")
-    const title = core.getInput("title")
-    const body = core.getInput("body")
-    const assignees = core.getInput("assignees")
+    const token = core.getInput('token')
+    const title = core.getInput('title')
+    const body = core.getInput('body')
+    const assignees = core.getInput('assignees')
 
     const octokit = github.getOctokit(token)
 
@@ -28934,7 +28934,6 @@ async function run() {
     })
 
     core.setOutput('issue', response.data)
-
   } catch (error) {
     // Fail the workflow run if an error occurs
     core.setFailed(error.message)
