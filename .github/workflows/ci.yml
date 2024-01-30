@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test Local Action
-        uses: index.js
+        uses: ./index.js
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
